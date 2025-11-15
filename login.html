@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đăng nhập - SHOP V02</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="auth.js"></script>
+</head>
+<body class="auth-bg">
+
+  <div class="auth-container fade-in">
+    <h2 id="formTitle" class="text-center mb-3 fw-bold text-danger">Đăng nhập</h2>
+
+    <!-- Form đăng nhập -->
+    <div id="loginForm">
+      <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Gmail">
+      <input type="password" id="loginPass" class="form-control mb-2" placeholder="Mật khẩu">
+      <button class="btn btn-danger w-100 mb-3" onclick="handleLogin()">Đăng nhập</button>
+      <p class="text-center">Chưa có tài khoản? 
+        <a class="text-danger fw-semibold pointer" onclick="toggleForm()">Đăng ký ngay</a>
+      </p>
+      <p id="loginMsg" class="msg text-center"></p>
+    </div>
+
+    <!-- Form đăng ký -->
+    <div id="registerForm" class="hidden">
+      <input type="text" id="regName" class="form-control mb-2" placeholder="Họ và tên">
+      <input type="email" id="regEmail" class="form-control mb-2" placeholder="Gmail">
+      <input type="text" id="regPhone" class="form-control mb-2" placeholder="Số điện thoại">
+      <input type="password" id="regPass" class="form-control mb-2" placeholder="Mật khẩu">
+      <input type="password" id="regRePass" class="form-control mb-2" placeholder="Xác nhận mật khẩu">
+
+      <button class="btn btn-secondary w-100 mb-2" onclick="sendVerification()">Gửi mã xác thực</button>
+      <div id="verifySection" class="hidden mb-2">
+        <input type="text" id="verifyCode" class="form-control" placeholder="Nhập mã xác thực">
+      </div>
+
+      <label class="d-flex align-items-center justify-content-center gap-2 mb-3">
+        <input type="checkbox" id="ageCheck">
+        <span>Tôi đã đủ 18 tuổi</span>
+      </label>
+
+      <button class="btn btn-danger w-100 mb-2" onclick="register()">Đăng ký</button>
+      <p class="text-center">Đã có tài khoản?
+        <a class="text-danger fw-semibold pointer" onclick="toggleForm()">Đăng nhập</a>
+      </p>
+      <p id="regMsg" class="msg text-center"></p>
+    </div>
+  </div>
+</body>
+</html>
